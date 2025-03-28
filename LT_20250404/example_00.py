@@ -26,11 +26,7 @@ def main() -> None:
     for i in range(n):
         y: float = l*np.cos(2*np.pi/n*i)+r*c
         x: float = l*np.sin(2*np.pi/n*i)+r*s
-        p: np.ndarray = np.array([
-            [k, l]
-            for k, l in zip(x, y)
-            if k*k+l*l < 1
-        ])
+        p: np.ndarray = np.array([[k, l] for k, l in zip(x, y) if k*k+l*l < 1])
         p = p.T
         ax.plot(p[0], p[1], color=c1, marker="o", linestyle="", markersize=54)
     ax.plot(c, s, color=c2, linewidth=60)
